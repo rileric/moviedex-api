@@ -32,6 +32,8 @@ app.use(function validateGenre(req,res,next) {
             return res.status(500).json({error: 'Invalid genre'});
         }
     }
+
+    next();
 });
 
 app.get('/movie', function hangleGetMovie(req,res) {
