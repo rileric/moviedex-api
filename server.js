@@ -26,16 +26,6 @@ app.use(function validateBearerToken(req,res,next) {
     next();
 });
 
-app.use(function validateGenre(req,res,next) {
-    if(req.query.genre) {
-        if(!validGenres.includes(req.query.genre.toLowerCase()) ) {
-            return res.status(500).json({error: 'Invalid genre'});
-        }
-    }
-
-    next();
-});
-
 app.get('/movie', function hangleGetMovie(req,res) {
     let response = MOVIEDEX;
 
